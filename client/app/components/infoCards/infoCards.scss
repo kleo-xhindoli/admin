@@ -1,0 +1,18 @@
+.info-cards{
+    .table-card{
+        padding: 0;
+        margin-top: 35px;
+
+        md-list{
+            padding: 0;
+        }
+    }
+    md-list-item{
+        &.table-header{
+            font-weight: bold;
+            background-color: #f7f7f7;
+            height: 70px;
+        }
+    }
+
+}

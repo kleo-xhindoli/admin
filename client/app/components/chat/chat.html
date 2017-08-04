@@ -1,0 +1,28 @@
+<md-content layout-padding layout="column" layout-align="center" layout-fill>
+
+    <md-content class="chat-content">
+        <md-card class="chat-box" ng-class="{'foreign': !msg.isMine, 'mine': msg.isMine}" ng-repeat="msg in $ctrl.messages">
+            <md-card-title class="sender-name" ng-if="!msg.isMine">{{msg.sender}}</md-card-title>
+            <md-card-content>{{msg.message}}</md-card-content>
+        </md-card>
+        <!--<md-card class="chat-box mine">
+            <md-card-content>hello.</md-card-content>
+        </md-card>
+        <md-card class="chat-box foreign md-primary">
+            <md-card-title class="sender-name">Kleo:</md-card-title>
+            <md-card-content>Hello World!</md-card-content>
+        </md-card>-->
+    </md-content>
+
+    <md-card id="message-box" layout="row" layout-align="center center" layout="column" flex>
+        <md-input-container flex>
+            <input type="text" ng-keyup="$ctrl.onKeyup($event)" ng-model="$ctrl.message" placeholder="Mesazhi juaj...">
+        </md-input-container>
+        <md-button class="md-icon-button md-primary" flex="10" ng-click="$ctrl.sendMessage($ctrl.message)">
+            <md-icon>
+                send
+            </md-icon>
+        </md-button>
+    </md-card>
+</md-content>
+

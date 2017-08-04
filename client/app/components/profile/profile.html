@@ -1,0 +1,19 @@
+<div layout="row" layout-fill layout-align="center center">
+    <md-whiteframe class="md-whiteframe-2dp profile-card" layout-padding>
+        <h2>Profili im</h2>
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Emri</label>
+            <input ng-model="$ctrl.fullname" disabled>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Username</label>
+            <input ng-model="$ctrl.username" disabled>
+        </md-input-container>
+        <div class="btn-wrapper" layout layout-align="center">
+            <md-button class="md-primary md-raised white-btn" ng-click="$ctrl.showDialog($event)">
+                <md-icon style="color: white">add</md-icon>
+                Shto Administrator
+            </md-button>
+        </div>
+    </md-whiteframe>
+</div>

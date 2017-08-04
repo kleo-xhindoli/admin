@@ -1,0 +1,34 @@
+<div layout="column" layout-fill class="main-sidenav">
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="true"
+        md-whiteframe="4"
+        flex>
+        <md-list>
+            <md-list-item ng-click="false" ui-sref="tickets" ui-sref-active="active">
+                <div>
+                    <md-icon>folder</md-icon>
+                    Rezervimet e biletave
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ng-click="false" ui-sref="info-cards" ui-sref-active="active">
+                <div>
+                    <md-icon>info</md-icon>
+                    Kartelat Informative
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ng-click="false" ui-sref="chat" ui-sref-active="active">
+                <div>
+                    <md-icon>chat</md-icon>
+                    Chat
+                </div>
+            </md-list-item>
+        </md-list>
+        <!-- {{$ctrl.state}} -->
+    </md-sidenav>
+
+</div>
+

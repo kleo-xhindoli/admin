@@ -1,9 +1,68 @@
-<navbar></navbar>
-<header>
-  <hero></hero>
-</header>
-<main>
-  <div>
-    <h1>Found in {{ $ctrl.name }}.html</h1>
-  </div>
-</main>
+
+<section layout="row" class="tickets-page" style="max-height: 100%">
+    <md-content layout-padding layout="row" layout-wrap flex>
+        <div class="filters" layout="row" flex="100">
+            <md-button class="md-primary" ng-if="$ctrl.hasFilters()" ng-click="$ctrl.clearFilters()"><md-icon>close</md-icon> Pastro Filtrat</md-button>
+            <span flex></span>
+            <md-button class="md-raised md-secondary" ng-href="{{$ctrl.exportUrl}}" target="_blank"><md-icon>file_download</md-icon> Export ne Excel</md-button>
+            <md-button class="md-icon-button" aria-label="Filters" ng-click="$ctrl.toggleFiltersSidebar()" ng-class="{'md-primary': $ctrl.showSidebar}">
+                <md-icon>filter_list</md-icon>
+            </md-button>
+        </div>
+        
+        <ticket ng-repeat="ticket in $ctrl.tickets | filter:$ctrl.filterCards()" ticket="ticket"></ticket>
+    </md-content>
+
+    <md-sidenav 
+        class="md-sidenav-right" 
+        md-component-id="right" 
+        md-disable-backdrop md-whiteframe="4" 
+        flex="30" 
+        md-is-locked-open="$ctrl.showSidebar"
+    >
+
+        <md-content layout-margin layout="column">
+            <p>
+            Filtro e-Tickets
+            </p>
+            <md-input-container>
+                <label>Kodi</label>
+                <input ng-model="$ctrl.filters.ticketCode">
+            </md-input-container>
+            <md-input-container>
+                <label>Statusi</label>
+                <md-select multiple ng-model="$ctrl.filters.status">
+                    <md-option value="Ne pritje per aprovim">Ne pritje per aprovim</md-option>
+                    <md-option value="Aprovuar">Aprovuar</md-option>
+                    <md-option value="Ne pritje per anullim">Ne pritje per anullim</md-option>
+                    <md-option value="Anulluar">Anulluar</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <label>Vendndodhja</label>
+                <md-select multiple ng-model="$ctrl.filters.location">
+                    <md-option value="Blv. Zhan d'Ark, Tirane">Blv. Zhan d'Ark, Tirane</md-option>
+                    <md-option value="Rr: “Jordan Misja” Tirane, Tirane">Rr: “Jordan Misja” Tirane, Tirane</md-option>
+                    <md-option value="Pallati i Kulturës i Kavajës, Kavaje">Pallati i Kulturës i Kavajës, Kavaje</md-option>
+                    <md-option value="Lagjia numër 1, Krujë">Lagjia numër 1, Krujë</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <label>Sherbimi</label>
+                <md-select multiple ng-model="$ctrl.filters.service">
+                    <md-option value="Vertetime">Vertetime</md-option>
+                    <md-option value="Aplikime te thjeshta">Aplikime te thjeshta</md-option>
+                    <md-option value="Kontrata">Kontrata</md-option>
+                </md-select>
+            </md-input-container>
+            <md-datepicker ng-model="ctrl.myDate" md-placeholder="Nga"></md-datepicker>
+            <md-datepicker ng-model="ctrl.myDate" md-placeholder="Deri"></md-datepicker>
+
+        </md-content>
+
+    </md-sidenav>
+</section>
+
+
+
+

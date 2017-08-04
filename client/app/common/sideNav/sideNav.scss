@@ -1,0 +1,12 @@
+.main-sidenav{
+    md-list{
+        padding: 0;
+
+        md-list-item{
+            &.active{
+                background: #ddd;
+            }
+        }
+    }
+}
+

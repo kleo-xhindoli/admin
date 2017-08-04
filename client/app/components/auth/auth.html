@@ -1,0 +1,16 @@
+<md-content layout="row" layout-fill layout-align="center center">
+    <md-whiteframe class="md-whiteframe-2dp login" layout="column" layout-align="center center">
+        <img src="http://www.adisa.gov.al/wp-content/uploads/2017/04/Logo-ADISA-web.png" alt="">
+        <h3 class="heading">Logohu ne Portalin Administrativ</h3>
+        <md-input-container flex="100">
+            <label>Username</label>
+            <input ng-model="$ctrl.username" required>
+        </md-input-container>
+        <md-input-container flex="100" ng-keyup="$ctrl.keyPress($event)">
+            <label>Password</label>
+            <input type="password" ng-model="$ctrl.password" required>
+        </md-input-container>
+        <h4 class="error" ng-if="$ctrl.hasError">{{ $ctrl.errorMessage }}</h4>
+        <md-button class="md-raised md-primary" id="login-btn" ng-click="$ctrl.logIn()">Log in</md-button>
+    </md-whiteframe>
+</md-content>

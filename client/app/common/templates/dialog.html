@@ -1,0 +1,31 @@
+<md-content layout-padding layout="column" style="padding: 35px; overflow: scroll-y;">
+    <h3>Vendosni te dhenat per profilin qe doni te krijoni</h3>
+    <div class="form">
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Username / Email</label>
+            <input ng-model="username" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Emri</label>
+            <input ng-model="firstname" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Mbiemri</label>
+            <input ng-model="lastname" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Password</label>
+            <input type="password" ng-model="password" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Konfirmo Password</label>
+            <input type="password" ng-model="confirm" required>
+        </md-input-container>
+        <p style="color: #EA4335; text-align:center" ng-if="hasError">{{ errorMsg }}</p>
+    </div>
+</md-content>
+<div class="btn-container" layout="row" layout-padding>
+    <md-button ng-click="cancel()">Anullo</md-button>
+    <div flex></div>
+    <md-button class="md-primary white-btn" ng-click="register()">Krijo Profil</md-button>
+</div>

@@ -1,0 +1,53 @@
+<md-card class="ticket-card">
+    <!--<md-card-title>
+        <md-card-title-text>
+            <span class="md-subhead">2 min me pare</span>
+        </md-card-title-text>
+    </md-card-title>-->
+    <md-card-content>
+        <div class="details">
+            <md-icon>view_week</md-icon>
+            {{$ctrl.ticket.ticketCode}}
+        </div>
+        <div class="details">
+            <md-icon>person</md-icon>
+            {{ $ctrl.ticket.createdBy.firstname || 'Kleo' }} {{ $ctrl.ticket.createdBy.lastname || 'Xhindoli' }}
+        </div>
+        <div class="details">
+            <md-icon>today</md-icon>
+            {{$ctrl.ticket.date | date: 'dd MMMM'}}
+        </div>
+        <div class="details">
+            <md-icon>access_time</md-icon>
+            {{$ctrl.ticket.time}}
+        </div>
+        <div class="details">
+            <md-icon>location_on</md-icon>
+            {{$ctrl.ticket.location}}
+        </div>
+        <div class="details">
+            <md-icon>info</md-icon>
+            {{$ctrl.ticket.service}} ({{$ctrl.ticket.nbServices}})
+        </div>
+        <div class="details">
+            <md-icon>blur_circular</md-icon>
+            {{$ctrl.ticket.status}}
+        </div>
+    </md-card-content>
+    
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button 
+            class="md-accent" 
+            ng-if="$ctrl.ticket.status === 'Ne pritje per aprovim'" 
+            ng-click="$ctrl.attemptApprove()"
+        >
+            <md-icon>check</md-icon>Aprovo
+        </md-button>
+        <md-button 
+            class="md-warn"
+            ng-if="$ctrl.ticket.status !== 'Anulluar'"
+            ng-click="$ctrl.attemptCancel()"
+        >
+            <md-icon>close</md-icon>Anullo</md-button>
+    </md-card-actions>
+</md-card>

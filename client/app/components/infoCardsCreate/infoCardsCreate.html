@@ -1,0 +1,57 @@
+<md-content class="create-info-card" layout="column">
+    <md-input-container>
+        <label>Titulli</label>
+        <input ng-model="$ctrl.title">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+        <label>Pershkrimi i shkurter</label>
+        <textarea ng-model="$ctrl.description" md-maxlength="600" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
+
+    <md-chips
+        class="tags"
+        ng-model="$ctrl.tags"
+        md-removable="true"
+        placeholder="Tags"
+        delete-button-label="Hiq Tag"
+        delete-hint="Shtyp delete per te hequr nje tag"
+        secondary-placeholder="+Tag">
+    </md-chips>
+
+    <div layout="row" flex>
+        <md-input-container flex="45">
+            <label>Kategoria</label>
+            <md-select ng-model="$ctrl.category">
+                <md-option value="Taksat/Tatimet">Taksat/Tatimet</md-option>
+                <md-option value="Arsimi">Arsimi</md-option>
+                <md-option value="Dokumentacion">Dokumentacion</md-option>
+                <md-option value="Mireqenia Sociale">Mireqenia Sociale</md-option>
+            </md-select>
+        </md-input-container>
+
+        <span flex></span>
+
+        <md-input-container flex="45">
+            <label>Nenkategoria</label>
+            <md-select ng-model="$ctrl.subcategory">
+                <md-option value="TAP">TAP</md-option>
+                <md-option value="Sigurimet Shoqerore">Sigurimet Shoqerore</md-option>
+                <md-option value="Legalizimi">Legalizimi</md-option>
+                <md-option value="Dokumente teknik arkivore">Dokumente teknik arkivore</md-option>
+                <md-option value="Arsimi i larte">Arsimi i larte</md-option>
+                <md-option value="Arsimi i mesem">Arsimi i mesem</md-option>
+                <md-option value="Arsimi i ulet">Arsimi i ulet</md-option>
+                <md-option value="Arsimi i ulet">Arsimi i ulet</md-option>
+                <md-option value="Mireqenia Sociale">Mireqenia Sociale</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+
+    <textarea froala="froalaOptions" ng-model="$ctrl.content" rows="8" placeholder="Permbajtja"></textarea>
+
+    <div layout="row" layout-align="center" flex>
+        <md-button class="md-raised md-primary create-button" ng-click="$ctrl.createCard()" flex="20">Krijo Kartelen</md-button>
+    </div>
+
+</md-content>

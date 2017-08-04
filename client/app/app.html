@@ -1,4 +1,9 @@
 <!-- Place all UI elements intended to be present across all routes in this file -->
-<div class="app">
-  <div ui-view></div>
+<div class="app" layout-fill layout="column">
+  <toolbar></toolbar>
+  <md-content layout="row" flex>
+    <side-nav ng-if="$ctrl.showSidenav"></side-nav>
+    <div ui-view layout="row" layout-fill>
+    </div>
+  </md-content>
 </div>

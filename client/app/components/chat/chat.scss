@@ -1,0 +1,21 @@
+#message-box {
+  position: fixed;
+  width: 74%;
+  bottom: 0;
+  // margin: auto;
+}
+
+.chat-content{
+  margin-bottom: 115px;
+  .mine{
+    margin-left: 20%;
+  }
+  .foreign{
+    margin-right: 20%;
+    background: rgb(239, 108, 0);
+    color: white;
+    .sender-name{
+      font-weight: bold;
+    }
+  }
+}

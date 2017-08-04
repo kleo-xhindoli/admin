@@ -1,0 +1,27 @@
+ <md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools" layout="row">
+        <h2 flex md-truncate>ADISA Admin Panel</h2>
+        <div flex></div>
+         <md-menu ng-if="SessionService.isLogged()">
+             <md-button class="user-info" ng-click="openMenu($mdMenu, $event)">
+                <md-icon>person</md-icon>
+                {{SessionService.getFullname()}}
+                <md-icon>
+                    arrow_drop_down
+                </md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ui-sref="profile">
+                        Profili
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="logOut()">
+                        Log out
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu> 
+    </div>
+</md-toolbar>

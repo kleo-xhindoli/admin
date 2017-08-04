@@ -1,12 +1,16 @@
 import angular from 'angular';
-import Navbar from './navbar/navbar';
-import Hero from './hero/hero';
+import Toolbar from './toolbar/toolbar';
 import User from './user/user';
+import services from './services/services';
+import SideNav from './sideNav/sideNav'
+import Ticket from './ticket/ticket'
 
 let commonModule = angular.module('app.common', [
-  Navbar,
-  Hero,
-  User
+  Toolbar,
+  SideNav,
+  User,
+  services,
+  Ticket
 ])
   
 .name;
