@@ -1,12 +1,13 @@
 import template from '../../common/templates/dialog.html';
 
 class ProfileController {
-    constructor(SessionService, $mdDialog) {
+    constructor(SessionService, $mdDialog, AuthService) {
         "ngInject";
         this.name = 'profile';
         this.fullname = SessionService.getFullname();
         this.username = SessionService.getUsername();
         this.$mdDialog = $mdDialog;
+        this.auth = AuthService;
     }
 
     showDialog(ev) {
@@ -29,6 +30,33 @@ class ProfileController {
                 );
         }, function() {
         });
+    }
+
+    changePassword() {
+        this.hasError = false;
+        if (this.password === this.confirm) {
+            this.auth.changePassword(this.password)
+            .then(() => {
+                this.$mdDialog.show(
+                this.$mdDialog.alert()
+                    .parent(angular.element(document.body))
+                    .clickOutsideToClose(true)
+                    .title('Sukses!')
+                    .textContent('Password-i juaj u ndryshua me sukses!');
+                    .ok('OK')
+                    .targetEvent(ev)
+                );
+            })
+            .catch((err) => {
+                this.hasError = true;
+                this.errorMsg = err.message;
+                console.log(err);
+            })
+        }
+        else {
+            this.hasError = true;
+            this.errorMsg = "Password-et nuk perputhen."
+        }
     }
 }
 

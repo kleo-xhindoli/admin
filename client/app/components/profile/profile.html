@@ -1,4 +1,4 @@
-<div layout="row" layout-fill layout-align="center center">
+<div layout="row" layout-align="center center">
     <md-whiteframe class="md-whiteframe-2dp profile-card" layout-padding>
         <h2>Profili im</h2>
         <md-input-container class="md-block" flex-gt-xs>
@@ -9,6 +9,27 @@
             <label>Username</label>
             <input ng-model="$ctrl.username" disabled>
         </md-input-container>
+        <div class="psw-change-container">
+            <h3>Ndrysho Password</h3>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Password i ri</label>
+                <input type="password" ng-model="$ctrl.password">
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Konfirmo password</label>
+                <input type="password" ng-model="$ctrl.confirm">
+            </md-input-container>
+            <div class="error" ng-if="$ctrl.hasError">
+                <p>{{$ctrl.errorMsg}}</p>
+            </div>
+            <div class="btn-container" layout="row" layout-align="end center">
+                <md-button class="md-primary" ng-click="$ctrl.changePassword()">
+                    <md-icon>lock</md-icon>
+                    Ndrysho Password
+                </md-button>
+            </div>
+        </div>
+
         <div class="btn-wrapper" layout layout-align="center">
             <md-button class="md-primary md-raised white-btn" ng-click="$ctrl.showDialog($event)">
                 <md-icon style="color: white">add</md-icon>

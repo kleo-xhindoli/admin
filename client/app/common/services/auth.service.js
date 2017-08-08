@@ -37,4 +37,16 @@ export default class AuthService {
         })
         return def.promise;
     }
+
+    changePassword (password) {
+        let def = this.$q.defer();
+        this.api.post(`/users/changePassword/${this.session.getUsername()}`, {password: password})
+        .then((res) => {
+            def.resolve(res);
+        })
+        .catch((err) => {
+            def.reject(err);
+        })
+        return def.promise;
+    }
 };
