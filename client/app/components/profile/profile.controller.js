@@ -42,7 +42,7 @@ class ProfileController {
                     .parent(angular.element(document.body))
                     .clickOutsideToClose(true)
                     .title('Sukses!')
-                    .textContent('Password-i juaj u ndryshua me sukses!');
+                    .textContent('Password-i juaj u ndryshua me sukses!')
                     .ok('OK')
                     .targetEvent(ev)
                 );
