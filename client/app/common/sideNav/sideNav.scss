@@ -6,6 +6,14 @@
             &.active{
                 background: #ddd;
             }
+
+            &.disabled {
+                color: lightgrey;
+
+                md-icon {
+                    color: lightgrey;
+                }
+            }
         }
     }
 }

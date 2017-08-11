@@ -14,6 +14,10 @@ let infoCardsCreateModule = angular.module('infoCardsCreate', [
     .state('create', {
         url: '/create',
         component: 'infoCardsCreate'
+    })
+    .state('edit', {
+        url: '/edit/:infocardId',
+        component: 'infoCardsCreate'
     });
 })
 
