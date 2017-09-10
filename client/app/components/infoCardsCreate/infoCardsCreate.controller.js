@@ -49,8 +49,8 @@ class InfoCardsCreateController {
         let card = {
             title: this.title,
             description: this.description,
-            category: this.category,
-            subcategory: this.subcategory,
+            category: this.category || 'Asnje',
+            subcategory: this.subcategory || 'Asnje',
             content: this.content,
             code: this.code,
             profitable: this.profitable,
@@ -92,13 +92,13 @@ class InfoCardsCreateController {
             number: this.documents.length + 1,
             docType: this.document.docType,
             institution: this.document.institution,
-            validPeriod: this.document.validPeriod
+            description: this.document.description
         }
 
         this.documents.push(newDoc);
         this.document.docType = "";
         this.document.institution = "";
-        this.document.validPeriod = "";
+        this.document.description = "";
     }
 }
 

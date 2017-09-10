@@ -7,20 +7,20 @@
     <md-card flex="100" class="table-card">
         <md-list>
             <md-list-item layout="row" class="table-header">
-                <span flex="10">Nr.</span>
-                <span flex="20">Titulli</span>
-                <span flex="25">Kategoria</span>
-                <span flex="30">Nenkategoria</span>
+                <span flex="5">Nr.</span>
+                <span flex="40">Titulli</span>
+                <span flex="20">Kategoria</span>
+                <span flex="20">Nenkategoria</span>
                 <span flex="15" >
                     Veprime
                 </span>
             </md-list-item>
             <md-divider></md-divider>
             <md-list-item ng-repeat="card in $ctrl.infoCards">
-                <span flex="10">{{$index + 1}}</span>
-                <span flex="20">{{card.title}}</span>
-                <span flex="25">{{card.category}}</span>
-                <span flex="30">{{card.subcategory}}</span>
+                <span flex="5">{{$index + 1}}</span>
+                <span flex="40">{{card.title}}</span>
+                <span flex="20">{{card.category}}</span>
+                <span flex="20">{{card.subcategory}}</span>
                 <span flex="15">
                      <md-button class="md-icon-button" ng-click="$ctrl.deleteCard(card._id)">
                         <md-icon>delete</md-icon>
