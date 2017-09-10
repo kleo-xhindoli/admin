@@ -1,8 +1,8 @@
 export default class APIService {
     constructor($http, $q, SessionService){
         "ngInject";
-        // this.url = 'http://52.233.197.18:3000'
-        this.url = 'http://localhost:3000'
+        this.url = 'http://104.45.19.24:3000'
+        // this.url = 'http://localhost:3000'
         this.$http = $http;
         this.$q = $q;
         this.session = SessionService;
